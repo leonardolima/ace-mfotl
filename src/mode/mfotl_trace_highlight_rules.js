@@ -32,7 +32,7 @@ var MfotlTraceHighlightRules = function() {
 
     "terms" : [ {
       token : "string",
-      regex : /[\w\[\]]+/,
+      regex : /[\w\[\]\".]+/,
       next : "terms"
     }, {
       token : "text",

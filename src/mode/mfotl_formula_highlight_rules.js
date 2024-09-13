@@ -68,11 +68,11 @@ var MfotlFormulaHighlightRules = function() {
 
     "terms" : [ {
       token : "constant.character",
-      regex : /[\w]+/,
+      regex : /\s*[\w]+\s*/,
       next : "terms"
     }, {
       token : "string",
-      regex : /[\w"\[\]]+/,
+      regex : /[\w"\[\]\s]+/,
       next : "terms"
     }, {
       token : "text",
@@ -90,13 +90,13 @@ var MfotlFormulaHighlightRules = function() {
 
     "boundedvariable" : [ {
       token : ["keyword.other.unit", "text"],
-      regex : /([\w-!])+(.)/,
+      regex : /([\w!-]+)(.)/,
       next : "start"
     } ],
 
     "interval" : [ {
       token : ["text", "storage", "text", "storage", "text"],
-      regex : /(\[|\()(\d+)(,)(\d+|∞)(\]|\))/,
+      regex : /(\[|\()(\d+)(,)(\d+|∞|\*)(\]|\))/,
       next : "start"
     }, {
       token : "empty",
